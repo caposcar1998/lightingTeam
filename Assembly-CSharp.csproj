@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ABE4A959-5E10-C173-C8D5-DAADD9FCADE0}</ProjectGuid>
+    <ProjectGuid>{E3EB44A7-C48F-0EDC-1A9E-3F7FB2F06710}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -602,31 +602,31 @@
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.19f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/Lightning/Lighting/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/gerardoarturomiranda/Documents/Gráficas Computacionales/lightingTeam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

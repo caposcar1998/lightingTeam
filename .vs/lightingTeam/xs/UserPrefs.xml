@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{E3EB44A7-C48F-0EDC-1A9E-3F7FB2F06710}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Math.cs">
+    <Files>
+      <File FileName="Assets/Pixel.cs" Line="46" Column="1" />
+      <File FileName="Assets/Math.cs" Line="28" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="lightingTeam" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7a99ee15-62a0-4b0e-b62f-4d6132d45b6e" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

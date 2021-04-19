@@ -22,29 +22,29 @@ public class Math : MonoBehaviour
         Debug.DrawLine(origin, k, Color.blue);
     }
 
-    internal float Magnitude(Vector3 entrada) {
+    public static float Magnitude(Vector3 entrada) {
         return Mathf.Sqrt((entrada.x * entrada.x) + (entrada.y * entrada.y) + (entrada.z * entrada.z));
     }
-    internal Vector3 Normalization(Vector3 entrada) {
+    public static Vector3 Normalization(Vector3 entrada) {
         float largo = Magnitude(entrada);
         return new Vector3(entrada.x / largo, entrada.y / largo, entrada.z / largo);
     }
-    internal Vector3 Magnitud(Vector3 entrada, float escalar)
+    public static Vector3 Magnitud(Vector3 entrada, float escalar)
     {
         return new Vector3(entrada.x * escalar, entrada.y * escalar, entrada.z * escalar);
     }
-    internal float ProductoPunto(Vector3 a, Vector3 b)
+    public static float ProductoPunto(Vector3 a, Vector3 b)
     {
         return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
     }
-    internal float Ángulo(Vector3 a, Vector3 b)
+    public static float Ángulo(Vector3 a, Vector3 b)
     {
         Vector3 an = Normalization(a);
         Vector3 bn = Normalization(b);
         float pp = ProductoPunto(an, bn);
         return Mathf.Acos(pp);
     }
-    internal Vector3 Distancia(float[] a, float[] b)
+    public static Vector3 Distancia(float[] a, float[] b)
     {
         float xt = a[0] - b[0];
         float yt = a[1] - b[1];
@@ -52,7 +52,7 @@ public class Math : MonoBehaviour
         return new Vector3(xt, yt, zt);
     }
     // Vector paralelo
-    internal Vector3 ProductoCruz(Vector3 a, Vector3 b)
+    public  static Vector3 ProductoCruz(Vector3 a, Vector3 b)
     {
         float app = ((a.y * b.z) - (a.z * b.y));
         float bpp = ((a.z * b.x) - (a.x * b.z));
