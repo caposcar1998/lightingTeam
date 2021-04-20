@@ -13,6 +13,12 @@ public class Pixel : MonoBehaviour
     // Declaración del diccionario donde se insertarán los vectores
     Dictionary<string, Vector3> vectoresArturo;
 
+    public GameObject camaraOscar;
+    public GameObject fuenteLuzOscar;
+    public GameObject pixelInterésOscar;
+    public GameObject esferaOscar;
+    GameObject[] gameObjectsÓscar;
+
 
     // Declaración del diccionario donde se insertarán los valores
     Dictionary<string, float> valoresÓscar;
@@ -21,11 +27,22 @@ public class Pixel : MonoBehaviour
 
     GameObject[] gameObjectsArturo;
 
+    public GameObject camaraManu;
+    public GameObject fuenteLuzManu;
+    public GameObject pixelInterésManu;
+    public GameObject esferaManu;
+    GameObject[] gameObjectsManu;
+
     // Declaración del diccionario donde se insertarán los valores
     Dictionary<string, float> valoresManu;
     // Declaración del diccionario donde se insertarán los vectores
     Dictionary<string, Vector3> vectoresManu;
 
+    public GameObject camaraMoni;
+    public GameObject fuenteLuzMoni;
+    public GameObject pixelInterésMoni;
+    public GameObject esferaMoni;
+    GameObject[] gameObjectsMoni;
 
     // Declaración del diccionario donde se insertarán los valores
     Dictionary<string, float> valoresMoni;
@@ -88,6 +105,155 @@ public class Pixel : MonoBehaviour
             pixelInterésArturo,
             esferaArturo
         };
+        valoresÓscar = new Dictionary<string, float>
+        {
+            {"kar", 0.12529f},
+            {"kag", 0.28801f},
+            {"kab", 0.25311f},
+            {"kdr", 0.18104f},
+            {"kdg", 0.98831f},
+            {"kdb", 0.04684f},
+            {"ksr", 0.35753f},
+            {"ksg", 0.39207f},
+            {"ksb", 0.36912f},
+            {"iar", 0.83664f},
+            {"iag", 0.87404f},
+            {"iab", 0.85723f},
+            {"idr", 0.98746f},
+            {"idg", 0.99539f},
+            {"idb", 0.80289f},
+            {"isr", 0.85272f},
+            {"isg", 0.89772f},
+            {"isb", 0.95995f},
+            {"i",40.0f * Mathf.Deg2Rad},
+            {"a",286.0f * Mathf.Deg2Rad},
+            {"seni", Mathf.Sin(40.0f)},
+            {"sena", Mathf.Sin(286.0f)},
+            {"cosa", Mathf.Cos(286.0f)},
+            {"cosi", Mathf.Sin(40.0f)},
+            {"radioReal", 0.93293f * 2 },
+            {"radio", 0.93293f },
+            {"anguloRotación", -1.1f },
+            { "alpha", 162.0f }
+        };
+
+        vectoresÓscar = new Dictionary<string, Vector3>
+        {
+            {"pivote",  new Vector3(-0.38091f, 0.85841f, 0.70222f)},
+            {"puntoA",  new Vector3(-0.95327f, 0.67593f, 0.53050f)},
+            {"ratioTraslado",  new Vector3(0.38091f, 0.85841f, 0.70222f)},
+            {"centroEsfera", new Vector3()},
+            {"pixelDeInterés", new Vector3()},
+            {"vectorNormal", new Vector3()},
+            {"vectorLuz", new Vector3()},
+            {"vectorVisión", new Vector3()},
+            {"posiciónCámara", new Vector3(-4.66113f, 4.89948f,-3.95601f)},
+            {"posiciónFuenteDeLuz", new Vector3(-3.10624f, 3.07567f, 3.46960f)},
+        };
+        gameObjectsÓscar = new GameObject[]{
+            camaraOscar,
+            fuenteLuzOscar,
+            pixelInterésOscar,
+            esferaOscar
+        };
+        valoresMoni = new Dictionary<string, float>
+        {
+            {"kar", 0.18308f},
+            {"kag", 0.22376f},
+            {"kab", 0.28071f},
+            {"kdr", 0.04166f},
+            {"kdg", 0.08266f},
+            {"kdb", 0.69165f},
+            {"ksr", 0.26315f},
+            {"ksg", 0.48600f},
+            {"ksb", 0.13866f},
+            {"iar", 0.95039f},
+            {"iag", 0.81666f},
+            {"iab", 0.87679f},
+            {"idr", 0.88845f},
+            {"idg", 0.96903f},
+            {"idb", 0.99164f},
+            {"isr", 0.80899f},
+            {"isg", 0.94072f},
+            {"isb", 0.91297f},
+            {"i",32.0f * Mathf.Deg2Rad},
+            {"a",76.0f * Mathf.Deg2Rad},
+            {"seni", Mathf.Sin(32.0f)},
+            {"sena", Mathf.Sin(76.0f)},
+            {"cosa", Mathf.Cos(76.0f)},
+            {"cosi", Mathf.Sin(32.0f)},
+            {"radioReal", 0.72715f * 2 },
+            {"radio", 0.72715f },
+            {"anguloRotación", -6.3f },
+            { "alpha", 12.0f }
+        };
+        vectoresMoni = new Dictionary<string, Vector3>{
+            {"pivote",  new Vector3(0.08237f, 0.42610f, 0.47587f)},
+            {"puntoA",  new Vector3(1.77421f, 0.33465f, 0.78895f)},
+            {"ratioTraslado",  new Vector3(0.42531f, 0.53589f, 0.73183f)},
+            {"centroEsfera", new Vector3()},
+            {"pixelDeInterés", new Vector3()},
+            {"vectorNormal", new Vector3()},
+            {"vectorLuz", new Vector3()},
+            {"vectorVisión", new Vector3()},
+            {"posiciónCámara", new Vector3(4.57361f, 4.43741f,-4.87721f)},
+            {"posiciónFuenteDeLuz", new Vector3(3.34361f, 3.24041f, 4.28955f)},
+        };
+        gameObjectsMoni = new GameObject[]{
+            camaraMoni,
+            fuenteLuzMoni,
+            pixelInterésMoni,
+            esferaMoni
+        };
+        valoresManu = new Dictionary<string, float>
+        {
+            {"kar", 0.17621f},
+            {"kag", 0.23565f},
+            {"kab", 0.13663f},
+            {"kdr", 0.02143f},
+            {"kdg", 0.73391f},
+            {"kdb", 0.20671f},
+            {"ksr", 0.38060f},
+            {"ksg", 0.32190f},
+            {"ksb", 0.37019f},
+            {"iar", 0.98697f},
+            {"iag", 0.89042f},
+            {"iab", 0.82559f},
+            {"idr", 0.84460f},
+            {"idg", 0.91196f},
+            {"idb", 0.88007f},
+            {"isr", 0.86206f},
+            {"isg", 0.94546f},
+            {"isb", 0.92229f},
+            {"i",156.0f * Mathf.Deg2Rad},
+            {"a",74.0f * Mathf.Deg2Rad},
+            {"seni", Mathf.Sin(156.0f)},
+            {"sena", Mathf.Sin(74.0f)},
+            {"cosa", Mathf.Cos(74.0f)},
+            {"cosi", Mathf.Sin(156.0f)},
+            {"radioReal", 0.89540f * 2 },
+            {"radio", 0.89540f },
+            {"anguloRotación", 9.5f },
+            { "alpha", 114.0f }
+        };
+        vectoresManu = new Dictionary<string, Vector3>{
+            {"pivote",  new Vector3(0.38638f,-0.90402f, 0.80185f)},
+            {"puntoA",  new Vector3(1.88701f,-1.94309f, 0.27726f)},
+            {"ratioTraslado",  new Vector3(.72493f,-0.08369f, 0.98777f)},
+            {"centroEsfera", new Vector3()},
+            {"pixelDeInterés", new Vector3()},
+            {"vectorNormal", new Vector3()},
+            {"vectorLuz", new Vector3()},
+            {"vectorVisión", new Vector3()},
+            {"posiciónCámara", new Vector3(4.42065f,-4.92961f,-5.87322f)},
+            {"posiciónFuenteDeLuz", new Vector3(3.01049f,-3.24177f, 4.84087f)},
+        };
+        gameObjectsManu = new GameObject[]{
+            camaraManu,
+            fuenteLuzManu,
+            pixelInterésManu,
+            esferaManu
+        };
 
     }
     void Update()
@@ -95,8 +261,11 @@ public class Pixel : MonoBehaviour
         // Arturo
         calculosIlu(vectoresArturo, valoresArturo, gameObjectsArturo, 0);
         // Óscar
+        calculosIlu(vectoresÓscar, valoresÓscar, gameObjectsÓscar, 1);
         // Manu
+        calculosIlu(vectoresManu, valoresManu, gameObjectsManu, 1);
         // Moni
+        calculosIlu(vectoresMoni, valoresMoni, gameObjectsMoni, 2);
 
     }
 
