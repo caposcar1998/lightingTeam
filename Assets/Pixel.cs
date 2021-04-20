@@ -1,18 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * Illumination
- *  Gerardo Arturo Miranda A01338074
- */
 public class Pixel : MonoBehaviour
 {
-    /* Declaración de gameobject para arrastrar.
-    *   En este caso:
-    *          a1 = camara
-    *          a2 = fuente de luz
-    *          a3 = pixel de interés
-    */
+    Matrix4x4 mR;
     public GameObject camaraArturo;
     public GameObject fuenteLuzArturo;
     public GameObject pixelInterésArturo;
@@ -97,18 +88,20 @@ public class Pixel : MonoBehaviour
             pixelInterésArturo,
             esferaArturo
         };
-        
-    }  
+
+    }
     void Update()
     {
         // Arturo
-        calculosIlu(vectoresArturo, valoresArturo, gameObjectsArturo);
+        calculosIlu(vectoresArturo, valoresArturo, gameObjectsArturo, 0);
         // Óscar
         // Manu
         // Moni
+
     }
 
-    void calculosIlu(Dictionary<string, Vector3> vectores, Dictionary<string, float> valores, GameObject[] gameObjects) {
+    void calculosIlu(Dictionary<string, Vector3> vectores, Dictionary<string, float> valores, GameObject[] gameObjects, int eje)
+    {
 
         Vector3 pixelDeInterés;
         Vector3 vectorLuz;
@@ -119,21 +112,24 @@ public class Pixel : MonoBehaviour
         Vector3 vectorNormalNormalizado;
         Vector3 vectorLuzReflejoNormalizado;
         Vector3 vectorVisión;
-
+        
         Vector3 puntoA = new Vector3(vectores["puntoA"].x, vectores["puntoA"].y, vectores["puntoA"].z);
         Vector3 ratioDeTraslado = new Vector3(vectores["ratioTraslado"].x, vectores["ratioTraslado"].y, vectores["ratioTraslado"].z);
         Matrix4x4 mT = Matriz.TranslateM(ratioDeTraslado.x, ratioDeTraslado.y, ratioDeTraslado.z);
         Vector4 aPrima = puntoA;
         aPrima.w = 1;
         aPrima = mT * aPrima;
+        
+        if (eje == 0){mR = Matriz.RotateM(valores["anguloRotación"], Matriz.AXIS.AX_X); }
+        if (eje == 1) { mR = Matriz.RotateM(valores["anguloRotación"], Matriz.AXIS.AX_Y); }
+        if (eje == 2) { mR = Matriz.RotateM(valores["anguloRotación"], Matriz.AXIS.AX_Z); }
 
-        Matrix4x4 mR = Matriz.RotateM(valores["anguloRotación"], Matriz.AXIS.AX_X);
         Matrix4x4 mP = Matriz.TranslateM(vectores["pivote"].x, vectores["pivote"].y, vectores["pivote"].z);
-        Matrix4x4 mP_1 = Matriz.TranslateM(-1*vectores["pivote"].x, -1 * vectores["pivote"].y, -1 * vectores["pivote"].z);
+        Matrix4x4 mP_1 = Matriz.TranslateM(-1 * vectores["pivote"].x, -1 * vectores["pivote"].y, -1 * vectores["pivote"].z);
 
         Debug.Log("Valor de aPrima: " + aPrima.x + ", " + aPrima.y + ", " + aPrima.z + ", ");
 
-        Vector4 sphereCenter = mP * mR * mP_1 * aPrima;
+        Vector4 sphereCenter = mP * this.mR * mP_1 * aPrima;
         Vector3 centroEsfera = new Vector3(sphereCenter.x, sphereCenter.y, sphereCenter.z);
         vectores["centroEsfera"] = centroEsfera;
         Debug.Log("Valor del centro de Esfera: " + centroEsfera);
@@ -143,7 +139,7 @@ public class Pixel : MonoBehaviour
             vectores["centroEsfera"].y + (valores["radio"] * valores["cosi"]),
             vectores["centroEsfera"].z + (valores["radio"] * valores["seni"] * valores["cosa"])
          );
-        vectores["pixelDeInterés"] =  pixelDeInterés;
+        vectores["pixelDeInterés"] = pixelDeInterés;
 
         // Rellenamos vectorLuz, vectorVisión, vectorNormal, vectorLuzReflejo
         vectorNormal = new Vector3(
@@ -165,13 +161,13 @@ public class Pixel : MonoBehaviour
         Debug.Log("Vector Visión: [Representado en Escena como vector de Color BLANCO] " + vectorVisión);
 
         vectorNormalNormalizado = Math.Normalization(vectorNormal);
-        
+
         Debug.Log("Normal normalizado: " + vectorNormalNormalizado);
         vectorLuzNormalizado = Math.Normalization(vectorLuz);
-        
+
 
         vectorVisiónNormalizado = Math.Normalization(vectorVisión);
-       
+
 
         float productoPuntoNU = Math.ProductoPunto(vectorNormalNormalizado, vectorLuz);
         Vector3 vectorParalelo = Math.Magnitud(vectorNormalNormalizado, productoPuntoNU);
@@ -217,7 +213,7 @@ public class Pixel : MonoBehaviour
         // Calculamos Conjunto A D S de Azul
         float AAzul = ((valores["kab"] * valores["iab"]));
         float DAzul = (valores["kdb"] * valores["idb"] * (Math.ProductoPunto(vectorNormalNormalizado, vectorLuzNormalizado)));
-        float SAzul = (valores["ksb"] * valores["isb"] * Mathf.Pow(Math.ProductoPunto(vectorVisiónNormalizado, vectorLuzReflejoNormalizado) , valores["alpha"]));
+        float SAzul = (valores["ksb"] * valores["isb"] * Mathf.Pow(Math.ProductoPunto(vectorVisiónNormalizado, vectorLuzReflejoNormalizado), valores["alpha"]));
 
 
         float totalAzul = (AAzul + DAzul + SAzul);
